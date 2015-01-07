@@ -15,12 +15,12 @@ import butterknife.InjectView;
 public class CalendarAdapter extends BindableAdapter<LocalDate>{
 
     private final LocalDate today;
-    private final int middle;
+    private final int todayPosition;
 
     public CalendarAdapter(Context context){
         super(context, Collections.<LocalDate>emptyList());
         today = LocalDate.now();
-        middle = Integer.MAX_VALUE / 2 + today.getDayOfWeek();
+        todayPosition = Integer.MAX_VALUE / 2 + today.getDayOfWeek();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CalendarAdapter extends BindableAdapter<LocalDate>{
 
     @Override
     public LocalDate getItem(int position){
-        return today.plusDays(position - middle);
+        return today.plusDays(position - todayPosition);
     }
 
     @Override
