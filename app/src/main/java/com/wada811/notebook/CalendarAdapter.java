@@ -1,11 +1,13 @@
 package com.wada811.notebook;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import org.joda.time.DateTimeConstants;
 import org.joda.time.Days;
 import org.joda.time.LocalDate;
 import java.util.Collections;
@@ -54,6 +56,13 @@ public class CalendarAdapter extends BindableAdapter<LocalDate>{
             holder.calendarDayTitle.setBackgroundResource(R.color.md_blue_500);
             holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_white));
             holder.calendarDayBody.setBackgroundResource(R.color.md_amber_50);
+        }
+        if(item.getDayOfWeek() == DateTimeConstants.SUNDAY){
+            holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_red_500));
+            holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
+        }else if(item.getDayOfWeek() == DateTimeConstants.SATURDAY){
+            holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_blue_500));
+            holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
         }
         holder.calendarDayDate.setText(item.toString());
     }
