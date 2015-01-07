@@ -34,4 +34,6 @@ dependencies {
     androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
     // Joda-Time
     compile 'joda-time:joda-time:2.6'
+    // ButterKnife
+    compile 'com.jakewharton:butterknife:6.0.0'
 }
