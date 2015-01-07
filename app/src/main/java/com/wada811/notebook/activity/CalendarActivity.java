@@ -15,6 +15,11 @@ public class CalendarActivity extends ActionBarActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        GridView calendarView = (GridView)findViewById(R.id.calendarView);
+        CalendarAdapter calendarAdapter = new CalendarAdapter(this);
+        calendarView.setAdapter(calendarAdapter);
+        calendarView.setSelection(Integer.MAX_VALUE / 2);
     }
 
 
