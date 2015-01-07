@@ -50,6 +50,11 @@ public class CalendarAdapter extends BindableAdapter<LocalDate>{
     @Override
     public void bindView(LocalDate item, int position, View view){
         ViewHolder holder = (ViewHolder)view.getTag();
+        if(position == todayPosition){
+            holder.calendarDayTitle.setBackgroundResource(R.color.md_blue_500);
+            holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_white));
+            holder.calendarDayBody.setBackgroundResource(R.color.md_amber_50);
+        }
         holder.calendarDayDate.setText(item.toString());
     }
 
