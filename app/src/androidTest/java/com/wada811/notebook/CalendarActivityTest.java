@@ -4,6 +4,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.LargeTest;
+import com.wada811.notebook.activity.CalendarActivity;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

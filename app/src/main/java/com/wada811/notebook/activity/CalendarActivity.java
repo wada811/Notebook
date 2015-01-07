@@ -1,9 +1,12 @@
-package com.wada811.notebook;
+package com.wada811.notebook.activity;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridView;
+import com.wada811.notebook.CalendarAdapter;
+import com.wada811.notebook.R;
 
 
 public class CalendarActivity extends ActionBarActivity{
