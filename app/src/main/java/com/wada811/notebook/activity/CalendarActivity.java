@@ -26,7 +26,6 @@ public class CalendarActivity extends ActionBarActivity{
         calendarWeekdayView.setSelection(Integer.MAX_VALUE / 2);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_calendar, menu);

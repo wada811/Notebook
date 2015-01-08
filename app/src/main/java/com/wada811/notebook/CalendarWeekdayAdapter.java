@@ -40,7 +40,6 @@ public class CalendarWeekdayAdapter extends BindableAdapter<LocalDate>{
         return Days.daysBetween(today, item).getDays();
     }
 
-
     @Override
     public View newView(LayoutInflater inflater, int position, ViewGroup container){
         View view = inflater.inflate(R.layout.view_calendar_day, container, false);
@@ -80,6 +79,7 @@ public class CalendarWeekdayAdapter extends BindableAdapter<LocalDate>{
         holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_red_500));
         holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
     }
+
     private void applySaturdayStyle(ViewHolder holder){
         holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_blue_500));
         holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
