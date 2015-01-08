@@ -14,7 +14,7 @@
         ></GridView>
 
     <GridView
-        android:id="@+id/calendarView"
+        android:id="@+id/calendarWeekdayView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="7"

@@ -14,12 +14,12 @@ import java.util.Collections;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class CalendarAdapter extends BindableAdapter<LocalDate>{
+public class CalendarWeekdayAdapter extends BindableAdapter<LocalDate>{
 
     private final LocalDate today;
     private final int todayPosition;
 
-    public CalendarAdapter(Context context){
+    public CalendarWeekdayAdapter(Context context){
         super(context, Collections.<LocalDate>emptyList());
         today = LocalDate.now();
         todayPosition = Integer.MAX_VALUE / 2 + today.getDayOfWeek();

@@ -5,7 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridView;
-import com.wada811.notebook.CalendarAdapter;
+import com.wada811.notebook.CalendarWeekdayAdapter;
 import com.wada811.notebook.CalendarWeekdayLabelAdapter;
 import com.wada811.notebook.R;
 
@@ -20,10 +20,10 @@ public class CalendarActivity extends ActionBarActivity{
         GridView calendarWeekdayLabelView = (GridView)findViewById(R.id.calendarWeekdayLabelView);
         CalendarWeekdayLabelAdapter calendarWeekdayLabelAdapter = new CalendarWeekdayLabelAdapter(this);
         calendarWeekdayLabelView.setAdapter(calendarWeekdayLabelAdapter);
-        GridView calendarView = (GridView)findViewById(R.id.calendarView);
-        CalendarAdapter calendarAdapter = new CalendarAdapter(this);
-        calendarView.setAdapter(calendarAdapter);
-        calendarView.setSelection(Integer.MAX_VALUE / 2);
+        GridView calendarWeekdayView = (GridView)findViewById(R.id.calendarWeekdayView);
+        CalendarWeekdayAdapter calendarWeekdayAdapter = new CalendarWeekdayAdapter(this);
+        calendarWeekdayView.setAdapter(calendarWeekdayAdapter);
+        calendarWeekdayView.setSelection(Integer.MAX_VALUE / 2);
     }
 
 
