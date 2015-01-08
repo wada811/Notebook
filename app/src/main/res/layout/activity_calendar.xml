@@ -2,12 +2,21 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context="com.wada811.notebook.activity.CalendarActivity">
+              android:orientation="vertical"
+              tools:context="com.wada811.notebook.activity.CalendarActivity"
+    >
+
+    <GridView
+        android:id="@+id/calendarWeekdayLabelView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="7"
+        ></GridView>
 
     <GridView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:numColumns="7"
         ></GridView>
 
