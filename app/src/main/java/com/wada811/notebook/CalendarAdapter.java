@@ -52,19 +52,37 @@ public class CalendarAdapter extends BindableAdapter<LocalDate>{
     @Override
     public void bindView(LocalDate item, int position, View view){
         ViewHolder holder = (ViewHolder)view.getTag();
+        initStyle(holder);
         if(position == todayPosition){
-            holder.calendarDayTitle.setBackgroundResource(R.color.md_blue_500);
-            holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_white));
-            holder.calendarDayBody.setBackgroundResource(R.color.md_amber_50);
+            applyTodayStyle(holder);
         }
         if(item.getDayOfWeek() == DateTimeConstants.SUNDAY){
-            holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_red_500));
-            holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
+            applySundayStyle(holder);
         }else if(item.getDayOfWeek() == DateTimeConstants.SATURDAY){
-            holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_blue_500));
-            holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
+            applySaturdayStyle(holder);
         }
-        holder.calendarDayDate.setText(item.toString());
+        holder.calendarDayDate.setText(item.toString().substring(item.toString().length() - 2));
+    }
+
+    private void initStyle(ViewHolder holder){
+        holder.calendarDayTitle.setBackgroundResource(R.color.md_white);
+        holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_black));
+        holder.calendarDayBody.setBackgroundResource(R.color.md_white);
+    }
+
+    private void applyTodayStyle(ViewHolder holder){
+        holder.calendarDayTitle.setBackgroundResource(R.color.md_blue_500);
+        holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_white));
+        holder.calendarDayBody.setBackgroundResource(R.color.md_amber_50);
+    }
+
+    private void applySundayStyle(ViewHolder holder){
+        holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_red_500));
+        holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
+    }
+    private void applySaturdayStyle(ViewHolder holder){
+        holder.calendarDayDate.setTextColor(getContext().getResources().getColor(R.color.md_blue_500));
+        holder.calendarDayDate.setTypeface(Typeface.DEFAULT_BOLD);
     }
 
     class ViewHolder{
