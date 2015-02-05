@@ -17,7 +17,6 @@ public class CalendarWeekdayLabelAdapter extends BindableAdapter<String>{
     static {
         LocalDate sunday = LocalDate.parse("1989-01-01");
         for(int i = 0; i < 7; i++){
-            DateTimeFormatter
             String weekdayLabel = sunday.plusDays(i).toString("E");
             weekdayLabels.add(weekdayLabel);
         }
